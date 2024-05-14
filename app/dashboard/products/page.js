@@ -38,7 +38,9 @@ const productPage = () => {
               <td className='text-white text-sm font-semibold pt-1' >21/01/2024</td>
               <td className='text-white text-sm font-semibold pt-1' >available</td>
               <td className='text-white text-sm font-semibold pt-1' >
-                <button className='bg-blue-500 px-2 py-1 rounded mr-2' >View</button>
+                <Link href='/dashboard/products/view-product' >
+                  <button className='bg-blue-500 px-2 py-1 rounded mr-2' >View</button>
+                </Link>
                 <button className='bg-red-600 px-2 py-1 rounded' >Delete</button>
               </td>
             </tr>

@@ -1,8 +1,9 @@
+import View from "@/app/_components/core/View";
 
 const page = () => {
   return (
-    <div>
-        
+    <div className="px-4 min-h-full w-full overflow-auto" >
+        <View/> 
     </div>
   )
 }
