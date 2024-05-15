@@ -103,6 +103,7 @@ const Form = ({user}) => {
                             {...register("active", {required:true})}
                             className="p-3 text-[#9CA3AF] font-semibold outline-none bg-[#2c2c2c] rounded-lg w-[50%] cursor-pointer"
                         >
+                            <option value="">isActive</option>
                             <option value="true">Yes</option>
                             <option value="false">No</option>
                         </select>
