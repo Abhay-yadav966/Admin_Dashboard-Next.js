@@ -35,7 +35,9 @@ const userPage = () => {
                 <td className=" text-white text-sm font-semibold pt-5" >Admin</td>
                 <td className=" text-white text-sm font-semibold pt-5" >active</td>
                 <td className=" text-white text-sm font-semibold pt-5" >
-                  <button className="bg-blue-500 px-2 py-1 rounded mr-2" >View</button>
+                  <Link href='/dashboard/users/view-user' >
+                    <button className="bg-blue-500 px-2 py-1 rounded mr-2" >View</button>
+                  </Link>
                   <button className="bg-red-600 px-2 py-1 rounded">Delete</button>
                 </td>
               </tr>
