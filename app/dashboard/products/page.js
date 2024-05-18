@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Logo from '../../_assets/Laptop.png'
+import Link from 'next/link'
 
 
 const productPage = () => {
@@ -7,9 +8,11 @@ const productPage = () => {
     <div className="px-4 overflow-auto min-h-full w-full" >
       <div className="flex flex-col gap-5" >
         {/* button */}
-        <button className="uppercase w-fit text-white text-sm bg-slate-500 px-2 py-1 rounded font-semibold" >
-          Add New
-        </button>
+        <Link href={'/dashboard/products/add'} >
+          <button className="uppercase w-fit text-white text-sm bg-slate-500 px-2 py-1 rounded font-semibold" >
+            Add New
+          </button>
+        </Link>
 
         {/* table */}
         <table className="w-full">
