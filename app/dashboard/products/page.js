@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Logo from '../../_assets/Laptop.png'
 
 
-const page = () => {
+const productPage = () => {
   return (
     <div className="px-4 overflow-auto min-h-full w-full" >
       <div className="flex flex-col gap-5" >
@@ -46,4 +46,4 @@ const page = () => {
   )
 }
 
-export default page;
+export default productPage;

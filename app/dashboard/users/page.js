@@ -1,11 +1,17 @@
 import Image from "next/image";
 import Logo from '../../_assets/Next.svg'
+import Link from "next/link";
 
-const page = () => {
+const userPage = () => {
   return (
     <div className="w-full px-4 min-h-full overflow-auto " >
         <div className="flex flex-col gap-5" >
-          <button className="uppercase w-fit text-white text-sm bg-slate-500 px-2 py-1 rounded font-semibold" >Add New</button>
+          {/* button */}
+          <Link href={'/dashboard/users/add'} >
+            <button className="uppercase w-fit text-white text-sm bg-slate-500 px-2 py-1 rounded font-semibold" >Add New</button>
+          </Link>
+          
+          {/* table */}
           <table className="w-full" >
             <thead>
               <tr>
@@ -40,4 +46,4 @@ const page = () => {
   )
 }
 
-export default page;
+export default userPage;
