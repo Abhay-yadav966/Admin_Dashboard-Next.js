@@ -7,9 +7,11 @@ const layout = ({children}) => {
             <div className="w-1/5 " >
                 <Sidebar/>
             </div>
-            <div className="bg-[#2c2c2c] w-full  overflow-y-auto flex flex-col items-center pt-4" >
+            <div className="bg-[#2c2c2c] w-full h-full overflow-y-auto flex flex-col items-center pt-4 " >
                 <Navbar/>
-                {children}
+                <div className="w-full overflow-y-auto mt-16 h-full " >
+                    {children}
+                </div>
             </div>
         </div>
     )
