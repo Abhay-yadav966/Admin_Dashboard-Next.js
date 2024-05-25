@@ -3,7 +3,7 @@ import Navbar from "../_components/common/Navbar";
 
 const layout = ({children}) => {
     return(
-        <div className="flex w-screen h-screen overflow-x-hidden overflow-y-auto bg-[#4c4c4c] border-4 border-green-600" >
+        <div className="flex w-screen h-screen overflow-x-hidden overflow-y-auto bg-[#4c4c4c]" >
             <div className="w-1/5 " >
                 <Sidebar/>
             </div>

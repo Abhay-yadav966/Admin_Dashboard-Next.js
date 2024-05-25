@@ -11,7 +11,7 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="h-full w-full border border-red-600 flex flex-col gap-5 p-5 " >
+    <div className="h-full w-full flex flex-col gap-5 p-5 " >
         {/* image and heading */}
         <div className="flex items-center gap-5" >
             <Image src={Logo} width={50} height={50}/>
