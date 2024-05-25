@@ -4,7 +4,7 @@ const viewUserPage = () => {
 
   return (
     <div className="px-4 overflow-auto w-full min-h-full" >
-        <View/>
+        <View userView={true}/>
     </div>
   )
 }

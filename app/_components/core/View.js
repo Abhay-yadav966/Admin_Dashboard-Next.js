@@ -4,7 +4,7 @@ import userLogo from '../../_assets/user.png'
 import { useForm } from "react-hook-form";
 
 
-const View = () => {
+const View = ({userView}) => {
   
     // react form
     const {
@@ -29,79 +29,102 @@ const View = () => {
         {/* form */}
         <form onSubmit={handleSubmit(update)} className="bg-[#4c4c4c] p-5 rounded-xl w-full flex flex-col gap-3 " >
             
-            {/* name */}
+            {/* name // title */}
             <label className="flex flex-col gap-2" >
-              <p className="uppercase text-white text-sm font-semibold" >username</p>
+              <p className="uppercase text-white text-sm font-semibold" >{ userView ? "username" : "title"}</p>
               <input 
                 type="text"
-                {...register("name", {required:true})}
+                {...register(`${ userView ? "name" : "title"}`, {required:true})}
                 className="p-3 text-[#9CA3AF] font-semibold outline-none bg-[#2c2c2c] rounded-lg"
               />
             </label>
 
-            {/* email */}
+            {/* email // price*/}
             <label className="flex flex-col gap-2" >
-              <p className="uppercase text-white text-sm font-semibold " >email</p>
+              <p className="uppercase text-white text-sm font-semibold " >{ userView ? "email" : "price"}</p>
               <input 
                 type="text" 
-                {...register("email", {required:true})}
+                {...register(`${ userView ? "email" : "price"}`, {required:true})}
                 className="p-3 text-[#9CA3AF] font-semibold outline-none bg-[#2c2c2c] rounded-lg"
               />
             </label>
 
-            {/* password */}
+            {/* password // stock*/}
             <label className="flex flex-col gap-2" >
-              <p className="uppercase text-white text-sm font-semibold " >password</p>
+              <p className="uppercase text-white text-sm font-semibold " >{ userView ? "password" : "stock"}</p>
+              <input 
+                type={ userView ? "password" : "text"}
+                {...register(`${ userView ? "password" : "stock"}`, {required:true})}
+                className="p-3 text-[#9CA3AF] font-semibold outline-none bg-[#2c2c2c] rounded-lg"
+              />
+            </label>
+
+            {/* phone // Color */}
+            <label className="flex flex-col gap-2" >
+              <p className="uppercase text-white text-sm font-semibold " >{ userView ? "Contact No." : "Color"}</p>
               <input 
                 type="text"
-                {...register("password", {required:true})}
+                {...register(`${ userView ? "phone" : "color"}`, {required:true})}
                 className="p-3 text-[#9CA3AF] font-semibold outline-none bg-[#2c2c2c] rounded-lg"
               />
             </label>
 
-            {/* phone */}
+            {/* address // size*/}
             <label className="flex flex-col gap-2" >
-              <p className="uppercase text-white text-sm font-semibold " >Contact No.</p>
-              <input 
-                type="text"
-                {...register("phone", {required:true})}
-                className="p-3 text-[#9CA3AF] font-semibold outline-none bg-[#2c2c2c] rounded-lg"
-              />
+              <p className="uppercase text-white text-sm font-semibold " >{ userView ? "Address" : "size"}</p>
+              
+              {
+                userView ? (
+                            <textarea
+                              rows={5}
+                              {...register("address", {required:true})}
+                              className="p-3 text-[#9CA3AF] font-semibold outline-none bg-[#2c2c2c] rounded-lg"
+                            />
+                ) : 
+                (
+                  <input 
+                    type="text"
+                    {...register("size", {required:true})}
+                    className="p-3 text-[#9CA3AF] font-semibold outline-none bg-[#2c2c2c] rounded-lg"
+                  />
+                )
+              }
             </label>
 
-            {/* address */}
-            <label className="flex flex-col gap-2" >
-              <p className="uppercase text-white text-sm font-semibold " >Address</p>
-              <textarea
-                rows={5}
-                {...register("address", {required:true})}
-                className="p-3 text-[#9CA3AF] font-semibold outline-none bg-[#2c2c2c] rounded-lg"
-              />
-            </label>
-
-            {/* admin dropdown */}
+            {/* admin dropdown // category dropdown*/}
             <label>
-              <p className="uppercase text-white text-sm font-semibold " >Is Admin</p>
+              <p className="uppercase text-white text-sm font-semibold " >{ userView ? "Is Admin" : "category"}</p>
               <select
-                {...register("isAdmin", {required:true})}
+                {...register(`${ userView ? "isAdmin" : "category"}`, {required:true})}
                 className="w-full p-3 text-[#9CA3AF] font-semibold outline-none bg-[#2c2c2c] rounded-lg"
               >
-                <option value="true">Yes</option>
-                <option value="false">No</option>
+                <option value={` ${ userView ? "true" : "kitchen"}`}>{ userView ? "Yes" : "kitchen"}</option>
+                <option value={` ${ userView ? "false" : "computer"}`} >{ userView ? "No" : "Computer"} </option>
               </select>
             </label>
 
-            {/* active dropdown */}
+            {/* active dropdown // description*/}
             <label>
-              <p className="uppercase text-white text-sm font-semibold" >Is Active</p>
-              <select
-                {...register("active", {required:true})}
-                className="w-full p-3 text-[#9CA3AF] font-semibold outline-none bg-[#2c2c2c] rounded-lg"
-              >
-                <option value="">Active</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
+              <p className="uppercase text-white text-sm font-semibold" >{ userView ? "Is Active" : "Description" }</p>
+
+              {
+                userView ? (
+                <select
+                  {...register("active", {required:true})}
+                  className="w-full p-3 text-[#9CA3AF] font-semibold outline-none bg-[#2c2c2c] rounded-lg"
+                >
+                  <option value="">Active</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+                ) : (
+                  <textarea 
+                    rows={4}
+                    {...register("description", {required:true})}
+                    className="w-full p-3 text-[#9CA3AF] font-semibold outline-none bg-[#2c2c2c] rounded-lg"
+                  />
+                )
+              }
             </label>
 
             {/* update button */}
